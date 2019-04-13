@@ -39,7 +39,25 @@ export class AppComponent implements OnInit {
     Particles.init({
       selector: '.background',
       connectParticles: true,
-      color: ['#2ab816', '#797979', '#4186ff']
+      color: ['#2ab816', '#797979', '#4186ff'],
+      responsive: [
+        {
+          breakpoint: 768,
+          options: {
+            maxParticles: 70,
+          }
+        }, {
+          breakpoint: 425,
+          options: {
+            maxParticles: 50,
+          }
+        }, {
+          breakpoint: 320,
+          options: {
+            maxParticles: 0
+          }
+        }
+      ]
     });
   }
 
