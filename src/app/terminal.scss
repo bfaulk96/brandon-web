@@ -1,0 +1,142 @@
+@import "../custom-material";
+
+.faux-input {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+}
+
+.term {
+  z-index: 5;
+  background: #000;
+  width: 90%;
+  max-width: 800px;
+  height: 280px;
+  font-family: Monaco, monospace;
+  font-weight: 400;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+  font-size: 1.2em;
+  padding: 6px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  display: block;
+  line-height: 1.2em;
+  overflow-y: scroll;
+  position: relative;
+  color: mat-color($mat-primary, main);
+  margin: 1.5em auto auto;
+  text-align: left;
+}
+
+.term-focus {
+  text-shadow: none;
+  color: #ccc;
+}
+
+.term .red {
+  color: red;
+}
+.term .blue {
+  color: blue;
+}
+.term .white {
+  color: #fff;
+}
+.term .bold {
+  font-weight: bold;
+}
+
+.user-input {
+  color: mat-color($mat-primary, lighter);
+}
+
+.result-text {
+  color: white;
+  .key {
+    color: mat-color($mat-accent, lighter);
+  }
+
+  .result-table {
+    list-style: none;
+    display: table;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: table-row;
+
+      label {
+        display: table-cell;
+        width: 120px;
+      }
+
+      span, a {
+        display: table-cell;
+        width: 0;
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+
+      a {
+        color: #4186ff;
+        text-decoration: none;
+        &:hover, &:focus {
+          background-color: mat-color($mat-accent, main);
+          color: darken(#4186ff, 50%);
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.bell {
+  width: 0.1em;
+  height: 1.1em;
+  line-height: 1.2em;
+  background: #fff;
+  position: absolute;
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0% {
+    visibility: visible;
+  }
+  49% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #111;
+}
