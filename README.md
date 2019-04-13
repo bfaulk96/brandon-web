@@ -1,5 +1,5 @@
 # BrandonWeb
-A personal website about myself. test push
+A personal website about myself.
 
 ## Development server
 
