@@ -1,5 +1,5 @@
 # BrandonWeb
-A personal website
+A personal website about myself.
 
 ## Development server
 
