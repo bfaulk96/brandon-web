@@ -141,5 +141,8 @@
       }
     }
   },
-  "defaultProject": "brandon-web"
+  "defaultProject": "brandon-web",
+  "cli": {
+    "analytics": "95e89ef7-6644-43cc-919a-bd03f9ab0e2b"
+  }
 }
