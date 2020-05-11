@@ -1,10 +1,23 @@
 @import "../custom-material";
 
+.holy-grail-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.holy-grail-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .content {
+  flex: 1;
+
   text-align: center;
   padding: 10px;
   position: relative;
-  height: 100%;
 
   #name-header {
     margin-top: 0.1em;
@@ -12,15 +25,13 @@
     font-family: "Helvetica", serif;
     font-weight: bold;
   }
-
-  @import "terminal";
 }
 
 .toolbar {
   margin: 0;
   z-index: 100 !important;
   opacity: 1;
-  background-color: mat-color($mat-accent, darker);
+  background-color: #252A3D;
 
   .name {
     width: 100%;
@@ -32,7 +43,7 @@
 
 .footer {
   text-align: center;
-  background-color: mat-color($mat-accent, darker);
+  background-color: #252A3D;
   color: white;
   height: 40px;
   line-height: 40px;

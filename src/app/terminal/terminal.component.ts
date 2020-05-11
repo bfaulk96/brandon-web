@@ -1,0 +1,75 @@
+import { Component, OnInit } from '@angular/core';
+
+enum MenuItemTypes {
+  FILE = 0
+}
+
+@Component({
+  selector: 'app-terminal',
+  templateUrl: './terminal.component.html',
+  styleUrls: ['./terminal.component.scss']
+})
+export class TerminalComponent implements OnInit {
+  constructor() { }
+
+  termName = 'brandon.faulkner$';
+  bio = {
+    "Degree": "BS Computer Science",
+    "Occupation": "Product Engineer",
+    "Company": "Thumbraise, Inc.",
+    "Experience": "4 years"
+  };
+  socialMedia = {
+    "LinkedIn": {
+      "name": "Brandon Faulkner",
+      "link": "https://www.linkedin.com/in/brandon-faulkner-10836276/"
+    },
+    "GitHub": {
+      "name": "bfaulk96",
+      "link": "https://github.com/bfaulk96"
+    },
+    "Facebook": {
+      "name": "Brandon Faulkner",
+      "link": "https://www.facebook.com/monstro222"
+    },
+    "Twitter": {
+      "name": "BFaulk96",
+      "link": "https://twitter.com/BFaulk96"
+    },
+  };
+
+  fileMenuOpen = false;
+  fileMenu = [
+    { title: 'Download Resume', type: MenuItemTypes.FILE, path: '/assets/files/resume.pdf', key: 'download' }
+  ];
+
+  helpMenuOpen = false;
+  helpMenu = [
+
+  ];
+
+  ngOnInit(): void {
+  }
+
+  getKeys(object): string[] {
+    return Object.keys(object);
+  }
+
+  toggleFileMenu(open?: boolean): void {
+    this.fileMenuOpen = open ?? !this.fileMenuOpen
+  }
+
+  toggleHelpMenu(open?: boolean): void {
+    this.helpMenuOpen = open ?? !this.helpMenuOpen
+  }
+
+  selectFileMenuAction(index): void  {
+    const action = this.fileMenu[index] ?? {};
+
+    switch (action.type) {
+      case MenuItemTypes.FILE:
+      default:
+        break;
+    }
+  }
+}
