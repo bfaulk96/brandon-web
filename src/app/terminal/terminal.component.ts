@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-enum MenuItemTypes {
-  FILE = 0
-}
+import {MenuItem, MenuItemTypes} from "./MenuItem";
 
 @Component({
   selector: 'app-terminal',
@@ -39,14 +36,12 @@ export class TerminalComponent implements OnInit {
   };
 
   fileMenuOpen = false;
-  fileMenu = [
+  fileMenu: MenuItem[] = [
     { title: 'Download Resume', type: MenuItemTypes.FILE, path: '/assets/files/resume.pdf', key: 'download' }
   ];
 
   helpMenuOpen = false;
-  helpMenu = [
-
-  ];
+  helpMenu = [];
 
   ngOnInit(): void {
   }
@@ -63,8 +58,8 @@ export class TerminalComponent implements OnInit {
     this.helpMenuOpen = open ?? !this.helpMenuOpen
   }
 
-  selectFileMenuAction(index): void  {
-    const action = this.fileMenu[index] ?? {};
+  selectFileMenuAction(index: number): void  {
+    const action: MenuItem = this.fileMenu[index];
 
     switch (action.type) {
       case MenuItemTypes.FILE:
