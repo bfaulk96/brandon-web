@@ -12,9 +12,9 @@ export class TerminalComponent implements OnInit {
   termName = 'brandon.faulkner$';
   bio = {
     "Degree": "BS Computer Science",
-    "Occupation": "Product Engineer",
-    "Company": "Thumbraise, Inc.",
-    "Experience": "4 years"
+    "Occupation": "Full-Stack Developer",
+    "Company": "Bayer AG",
+    "Total Experience": "4.5 years"
   };
   socialMedia = {
     "LinkedIn": {
@@ -37,7 +37,7 @@ export class TerminalComponent implements OnInit {
 
   fileMenuOpen = false;
   fileMenu: MenuItem[] = [
-    { title: 'Download Resume', type: MenuItemTypes.FILE, path: '/assets/files/resume.pdf', key: 'download' }
+    { title: 'Download Resume (Outdated)', type: MenuItemTypes.FILE, path: '/assets/files/resume.pdf', key: 'download' }
   ];
 
   helpMenuOpen = false;
