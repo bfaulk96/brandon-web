@@ -14,7 +14,7 @@ export class TerminalComponent implements OnInit {
     "Degree": "BS Computer Science",
     "Occupation": "Full-Stack Developer",
     "Company": "Bayer AG",
-    "Total Experience": "4.5 years"
+    "Experience": "4.5 years"
   };
   socialMedia = {
     "LinkedIn": {
