@@ -13,10 +13,10 @@ pre-push:
 pre-commit:
   commands:
     prettier:
-      run: npx prettier --write {staged_files} && git add
+      run: npx prettier --write {staged_files} && git add {staged_files}
     eslint:
       glob: '*.{js,ts}'
-      run: npx eslint --fix {staged_files} && git add
+      run: npx eslint --fix {staged_files} && git add {staged_files}
 #   scripts:
 #     "hello.js":
 #       runner: node

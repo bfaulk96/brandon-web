@@ -2,7 +2,7 @@
   <mat-toolbar class="toolbar">
     <span class="name">{{ name }}</span>
   </mat-toolbar>
-  <div class="holy-grail-body">
+  <div class="holy-grail-body" (konami)="ee()">
     <main class="content">
       <app-terminal></app-terminal>
       <router-outlet></router-outlet>

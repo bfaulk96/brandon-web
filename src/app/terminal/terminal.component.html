@@ -34,7 +34,8 @@
       </button>
     </div>
   </div>
-  <div class="terminal-content" id="terminal-content">{{ termName }} <span class="user-input">bio</span>
+  <div class="terminal-content" id="terminal-content">
+    <span>{{ termName }} <span class="user-input">bio</span></span>
     <br />
     <div class="result-text">
       <ul class="result-table">
@@ -42,8 +43,9 @@
           <label for="bio-{{ i }}" class="key">{{ key }}:</label>
           <span id="bio-{{ i }}">{{ bio[key] }}</span>
         </li>
-      </ul> </div
-    >{{ termName }} <span class="user-input">social_media</span>
+      </ul>
+    </div>
+    <span>{{ termName }} <span class="user-input">social_media</span></span>
     <br />
     <div class="result-text">
       <ul class="result-table">
@@ -51,7 +53,8 @@
           <label for="social-{{ i }}" class="key">{{ key }}:</label>
           <a [href]="socialMedia[key]['link']" id="social-{{ i }}" target="_blank">{{ socialMedia[key]['name'] }}</a>
         </li>
-      </ul> </div
-    >{{ termName }} <span class="bell"></span>
+      </ul>
+    </div>
+    <span>{{ termName }} <span class="bell"></span></span>
   </div>
 </div>

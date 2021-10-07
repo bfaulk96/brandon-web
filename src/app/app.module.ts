@@ -9,6 +9,7 @@ import { TerminalComponent } from './terminal/terminal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatButtonModule } from '@angular/material/button';
 import { ClickElsewhereDirective } from './click-elsewhere.directive';
+import { KonamiModule } from 'ngx-konami';
 
 @NgModule({
   declarations: [AppComponent, TerminalComponent, ClickElsewhereDirective],
@@ -19,6 +20,7 @@ import { ClickElsewhereDirective } from './click-elsewhere.directive';
     AppMaterialModule,
     FontAwesomeModule,
     MatButtonModule,
+    KonamiModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
