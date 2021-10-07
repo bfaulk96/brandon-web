@@ -1,7 +1,7 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-  selector: '[appClickElsewhere]'
+  selector: '[appClickElsewhere]',
 })
 export class ClickElsewhereDirective {
   @Output() appClickElsewhere = new EventEmitter<MouseEvent>();
@@ -18,9 +18,11 @@ export class ClickElsewhereDirective {
 
     // Check if the click was outside the included elements
     //  shortcutting so we don't look through array if we don't need to
-    const doesNotContainIncludedElements = !doesNotContainElement || this.includedElements.every((elem) => {
-      return elem && !this.elementRef.nativeElement.contains(elem);
-    });
+    const doesNotContainIncludedElements =
+      !doesNotContainElement ||
+      this.includedElements.every((elem) => {
+        return elem && !this.elementRef.nativeElement.contains(elem);
+      });
 
     if (doesNotContainElement && doesNotContainIncludedElements) {
       this.appClickElsewhere.emit(event);

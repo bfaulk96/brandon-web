@@ -1,15 +1,23 @@
 <div class="terminal">
   <div class="terminal-header">
     <div class="header-section left-side">
-      <button class="left-options" [class.active]="fileMenuOpen" (click)="toggleFileMenu()" (appClickElsewhere)="toggleFileMenu(false)">
+      <button
+        class="left-options"
+        [class.active]="fileMenuOpen"
+        (click)="toggleFileMenu()"
+        (appClickElsewhere)="toggleFileMenu(false)">
         File
       </button>
-      <button class="left-options" [class.active]="helpMenuOpen" (click)="toggleHelpMenu()" (appClickElsewhere)="toggleHelpMenu(false)">
+      <button
+        class="left-options"
+        [class.active]="helpMenuOpen"
+        (click)="toggleHelpMenu()"
+        (appClickElsewhere)="toggleHelpMenu(false)">
         Help
       </button>
       <div class="file-menu" [class.open]="fileMenuOpen">
         <ng-container *ngFor="let option of fileMenu; index as i">
-          <a [href]="option.path" download draggable="false" class="menu-option-button">{{option.title}}</a>
+          <a [href]="option.path" download draggable="false" class="menu-option-button">{{ option.title }}</a>
         </ng-container>
       </div>
     </div>
@@ -26,24 +34,25 @@
       </button>
     </div>
   </div>
-  <div class="terminal-content" id="terminal-content">{{termName}} <span class="user-input">bio</span>
-    <br>
+  <div class="terminal-content" id="terminal-content">
+    {{ termName }} <span class="user-input">bio</span>
+    <br />
     <span class="result-text">
       <ul class="result-table">
         <li *ngFor="let key of getKeys(bio); let i = index">
-          <label for="bio-{{i}}" class="key">{{key}}:</label>
-          <span id="bio-{{i}}">{{bio[key]}}</span>
+          <label for="bio-{{ i }}" class="key">{{ key }}:</label>
+          <span id="bio-{{ i }}">{{ bio[key] }}</span>
         </li>
-      </ul>
-    </span>{{termName}} <span class="user-input">social_media</span>
-    <br>
+      </ul> </span
+    >{{ termName }} <span class="user-input">social_media</span>
+    <br />
     <span class="result-text">
       <ul class="result-table">
         <li *ngFor="let key of getKeys(socialMedia); let i = index">
-          <label for="social-{{i}}" class="key">{{key}}:</label>
-          <a [href]="socialMedia[key]['link']" id="social-{{i}}" target="_blank">{{socialMedia[key]['name']}}</a>
+          <label for="social-{{ i }}" class="key">{{ key }}:</label>
+          <a [href]="socialMedia[key]['link']" id="social-{{ i }}" target="_blank">{{ socialMedia[key]['name'] }}</a>
         </li>
-      </ul>
-    </span>{{termName}} <span class="bell"></span>
+      </ul> </span
+    >{{ termName }} <span class="bell"></span>
   </div>
 </div>

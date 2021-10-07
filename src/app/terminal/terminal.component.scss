@@ -1,5 +1,5 @@
 @use '~@angular/material' as mat;
-@import "../../custom-material";
+@import '../../custom-material';
 
 $terminal-border-radius: 3px;
 $terminal-header-height: 30px;
@@ -98,7 +98,7 @@ $light-blue: #4186ff;
             height: $terminal-header-height;
 
             &:hover {
-              background-color: lighten($dark-background, 20%)
+              background-color: lighten($dark-background, 20%);
             }
           }
         }
@@ -189,7 +189,8 @@ $light-blue: #4186ff;
         width: 120px;
       }
 
-      span, a {
+      span,
+      a {
         display: table-cell;
         width: 0;
         padding-right: 12px;
@@ -199,7 +200,8 @@ $light-blue: #4186ff;
       a {
         color: $light-blue;
         text-decoration: none;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background-color: $dark-background;
           color: lighten($light-blue, 20%);
           outline: none;

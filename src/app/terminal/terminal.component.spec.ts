@@ -6,12 +6,13 @@ describe('TerminalComponent', () => {
   let component: TerminalComponent;
   let fixture: ComponentFixture<TerminalComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TerminalComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TerminalComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TerminalComponent);

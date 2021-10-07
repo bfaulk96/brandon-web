@@ -1,4 +1,4 @@
-@import "../custom-material";
+@import '../custom-material';
 
 .holy-grail-wrapper {
   display: flex;
@@ -22,7 +22,7 @@
   #name-header {
     margin-top: 0.1em;
     font-size: 6em;
-    font-family: "Helvetica", serif;
+    font-family: 'Helvetica', serif;
     font-weight: bold;
   }
 }
@@ -31,7 +31,7 @@
   margin: 0;
   z-index: 100 !important;
   opacity: 1;
-  background-color: #252A3D;
+  background-color: #252a3d;
 
   .name {
     width: 100%;
@@ -43,7 +43,7 @@
 
 .footer {
   text-align: center;
-  background-color: #252A3D;
+  background-color: #252a3d;
   color: white;
   height: 40px;
   line-height: 40px;
