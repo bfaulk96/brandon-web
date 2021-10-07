@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import "../../custom-material";
 
 $terminal-border-radius: 3px;
@@ -138,7 +139,7 @@ $light-blue: #4186ff;
     line-height: 1.2em;
     overflow-y: auto;
     position: relative;
-    color: mat-color($mat-primary, main);
+    color: mat.get-color-from-palette($mat-primary, main);
     text-align: left;
 
     .red {
@@ -165,13 +166,13 @@ $light-blue: #4186ff;
 }
 
 .user-input {
-  color: mat-color($mat-primary, lighter);
+  color: mat.get-color-from-palette($mat-primary, lighter);
 }
 
 .result-text {
   color: white;
   .key {
-    color: mat-color($mat-accent, lighter);
+    color: mat.get-color-from-palette($mat-accent, lighter);
   }
 
   .result-table {
