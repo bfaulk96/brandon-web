@@ -34,25 +34,24 @@
       </button>
     </div>
   </div>
-  <div class="terminal-content" id="terminal-content">
-    {{ termName }} <span class="user-input">bio</span>
+  <div class="terminal-content" id="terminal-content">{{ termName }} <span class="user-input">bio</span>
     <br />
-    <span class="result-text">
+    <div class="result-text">
       <ul class="result-table">
         <li *ngFor="let key of getKeys(bio); let i = index">
           <label for="bio-{{ i }}" class="key">{{ key }}:</label>
           <span id="bio-{{ i }}">{{ bio[key] }}</span>
         </li>
-      </ul> </span
+      </ul> </div
     >{{ termName }} <span class="user-input">social_media</span>
     <br />
-    <span class="result-text">
+    <div class="result-text">
       <ul class="result-table">
         <li *ngFor="let key of getKeys(socialMedia); let i = index">
           <label for="social-{{ i }}" class="key">{{ key }}:</label>
           <a [href]="socialMedia[key]['link']" id="social-{{ i }}" target="_blank">{{ socialMedia[key]['name'] }}</a>
         </li>
-      </ul> </span
+      </ul> </div
     >{{ termName }} <span class="bell"></span>
   </div>
 </div>

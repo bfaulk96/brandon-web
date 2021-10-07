@@ -25,7 +25,6 @@ $light-blue: #4186ff;
   width: 90%;
   font-family: Monaco, monospace;
   font-weight: 400;
-  font-smooth: never;
   -webkit-font-smoothing: none;
   position: relative;
   margin: 1.5em auto auto;
@@ -186,13 +185,11 @@ $light-blue: #4186ff;
 
       label {
         display: table-cell;
-        width: 120px;
+        width: 130px;
       }
 
-      span,
-      a {
+      span, a {
         display: table-cell;
-        width: 0;
         padding-right: 12px;
         padding-left: 12px;
       }
