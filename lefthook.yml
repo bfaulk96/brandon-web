@@ -2,21 +2,21 @@
 # Refer for explanation to following link:
 # https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
 #
- pre-push:
-   commands:
-     packages-audit:
-       tags: frontend security
-       run: npm audit --production
+pre-push:
+  commands:
+    packages-audit:
+      tags: frontend security
+      run: npm audit --production
 #     test:
 #       run: npm t
 
- pre-commit:
-   commands:
-     prettier:
-       run: npx prettier --write {staged_files} && git add
-     eslint:
-       glob: "*.{js,ts}"
-       run: npx eslint --fix {staged_files} && git add
+pre-commit:
+  commands:
+    prettier:
+      run: npx prettier --write {staged_files} && git add
+    eslint:
+      glob: '*.{js,ts}'
+      run: npx eslint --fix {staged_files} && git add
 #   scripts:
 #     "hello.js":
 #       runner: node
