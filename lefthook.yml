@@ -7,8 +7,8 @@
      packages-audit:
        tags: frontend security
        run: npm audit --production
-     test:
-       run: npm t
+#     test:
+#       run: npm t
 
  pre-commit:
    commands:
