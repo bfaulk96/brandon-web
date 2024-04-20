@@ -12,9 +12,9 @@ export class TerminalComponent {
   termName = 'brandon.faulkner$';
   bio = {
     Degree: 'BS Computer Science',
-    Occupation: 'Full-Stack Developer',
-    Company: 'Bayer AG',
-    Experience: '4.5 years',
+    Occupation: 'Software Engineer',
+    Company: 'Largely',
+    Experience: '8 years',
   };
   socialMedia = {
     LinkedIn: {
