@@ -134,6 +134,14 @@
   "defaultProject": "brandon-web",
   "cli": {
     "analytics": "95e89ef7-6644-43cc-919a-bd03f9ab0e2b",
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": ["@angular-eslint/schematics"]
+  },
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
   }
 }
