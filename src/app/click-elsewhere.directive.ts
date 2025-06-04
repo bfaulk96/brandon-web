@@ -14,17 +14,14 @@ export class ClickElsewhereDirective {
     const targetElement = event.target as HTMLElement;
 
     // Check if the click was outside the element
-    const doesNotContainElement = targetElement && !this.elementRef.nativeElement.contains(targetElement);
+    const clickOutsideHost = !!targetElement && !this.elementRef.nativeElement.contains(targetElement);
 
-    // Check if the click was outside the included elements
-    //  shortcutting so we don't look through array if we don't need to
-    const doesNotContainIncludedElements =
-      !doesNotContainElement ||
-      this.includedElements.every((elem) => {
-        return elem && !this.elementRef.nativeElement.contains(elem);
-      });
+    // If the click was outside the host, ensure it wasn't on any included element
+    const clickOutsideIncludedElements = (this.includedElements ?? []).every((elem) => {
+      return !!elem && !elem.nativeElement.contains(targetElement);
+    });
 
-    if (doesNotContainElement && doesNotContainIncludedElements) {
+    if (clickOutsideHost && clickOutsideIncludedElements) {
       this.appClickElsewhere.emit(event);
     }
   }
