@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "plugins": ["typescript", "react", "jsx-a11y", "import"],
+  "settings": {
+    "react": {
+      "version": "19.2.6"
+    }
+  },
+  "ignorePatterns": ["dist", "coverage", "node_modules"]
+}
