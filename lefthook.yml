@@ -1,24 +1,13 @@
-# EXAMPLE USAGE
-# Refer for explanation to following link:
-# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
-#
 pre-push:
   commands:
     packages-audit:
       tags: frontend security
-      run: npm audit --production
-#     test:
-#       run: npm t
+      run: bun audit
 
 pre-commit:
   commands:
-    prettier:
-      run: npx prettier --write {staged_files} && git add {staged_files}
-    eslint:
-      glob: '*.{js,ts}'
-      run: npx eslint --fix {staged_files} && git add {staged_files}
-#   scripts:
-#     "hello.js":
-#       runner: node
-#     "any.go":
-#       runner: go run
+    oxlint:
+      glob: '*.{js,jsx,ts,tsx}'
+      run: bunx oxlint {staged_files}
+    oxfmt:
+      run: bunx oxfmt --write {staged_files} && git add {staged_files}
