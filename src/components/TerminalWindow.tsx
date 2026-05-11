@@ -52,6 +52,26 @@ const commandHelp = [
   { command: 'sudo hire brandon', detail: 'Easter egg.' },
 ];
 
+const navigationCommands = ['experience', 'projects', 'resume'];
+
+const terminalCommands = [
+  'help',
+  'bio',
+  'about',
+  'social',
+  'social_media',
+  'experience',
+  'jobs',
+  'projects',
+  'repos',
+  'resume',
+  'contact',
+  'clear',
+  'whoami',
+  'coffee',
+  'sudo hire brandon',
+];
+
 function initialLines(): TerminalLine[] {
   return [
     { kind: 'command', value: 'bio' },
@@ -92,6 +112,7 @@ export function TerminalWindow({
   const [isClosing, setIsClosing] = useState(false);
   const [isMinimizing, setIsMinimizing] = useState(false);
   const terminalContentRef = useRef<HTMLDivElement>(null);
+  const lastCommandRef = useRef<string | null>(null);
   const menuRef = useRef<HTMLElement>(null);
 
   const fileItems = useMemo(
@@ -165,12 +186,38 @@ export function TerminalWindow({
     if (!value) return;
 
     const normalized = value.toLowerCase();
+
+    if (normalized === '!!') {
+      const lastCommand = lastCommandRef.current;
+
+      if (lastCommand === null) {
+        setLines((current) => [
+          ...current,
+          { kind: 'command', value },
+          { kind: 'output', value: 'No previous command to run.' },
+        ]);
+        setInput('');
+        return;
+      }
+
+      runCommand(lastCommand);
+      return;
+    }
+
+    lastCommandRef.current = value;
+
     const nextLines: TerminalLine[] = [{ kind: 'command', value }];
 
     switch (normalized) {
       case 'help':
         setModal('help');
         nextLines.push({ kind: 'output', value: 'Opening command reference...' });
+        break;
+      case 'ls':
+        nextLines.push({ kind: 'output', value: navigationCommands.join('\n') });
+        break;
+      case 'ls -a':
+        nextLines.push({ kind: 'output', value: terminalCommands.join('\n') });
         break;
       case 'bio':
       case 'about':
